@@ -2,7 +2,8 @@ const onSubmit = () => {
     const location = document.getElementById("location").value;
     if(location) {
         if(document.getElementById("help_block"))document.getElementById("help_block").style.display = "none";
-        fetch("http://localhost:3000/weather?address="+location).then((response) => {
+        //fetch("http://localhost:3000/weather?address="+location).then((response) => {
+        fetch("/weather?address="+location).then((response) => {
             response.json().then((data) => {
                 console.log(data);
                 if(data.error) {

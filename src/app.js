@@ -3,6 +3,7 @@ const express = require("express");
 
 const utils = require("./utils/utils");
 const app = express();
+const port = process.env.PORT || 3000;
 
 const publicDirectoryPath = path.join(__dirname, "../public");
 
@@ -47,6 +48,6 @@ app.get('/weather', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("server is up");
 });
